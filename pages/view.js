@@ -22,10 +22,10 @@ export default class View extends React.Component {
     }else{
         return(
             this.state.data.map((data) =>
-              <li key={data[0]}>{data[1]} 
+              <li key={data.tid}>{data.title} 
 
-              <Link href={'/text?id=' + data[0]}>
-              <button type="button" value={data[0]}> edit </button>
+              <Link href={'/edit?id=' + data.tid}>
+              <button type="button" value={data.tid}> edit </button>
               </Link>
               </li>
             )

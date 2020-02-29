@@ -113,7 +113,7 @@ class TextList(Resource):
 def download_file(tid):
     print("download file >>>>>>>>>" + tid)
     sql = "select * from demo where tid = ? "
-    res = query_db(sql, tid, True)
+    res = query_db(sql, [tid], True)
     response = make_response(res["content"])
     response.headers['Content-Type'] = "text/plain"
     response.headers['Content-Disposition'] = 'attachment; filename={}'.format(res["title"] + ".txt")

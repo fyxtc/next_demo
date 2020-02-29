@@ -1,7 +1,7 @@
 import Router from 'next/router'
 
 
-export default class Text extends React.Component {
+export default class Edit extends React.Component {
   constructor(props){
     super(props)
     this.state = {
