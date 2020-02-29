@@ -18,7 +18,7 @@ export default class Edit extends React.Component {
   componentDidMount() {
     var id = this.props.query.id;
     let thiz = this;
-    fetch("http://localhost:5000/text/" + id)
+    fetch("http://localhost:8080/text/" + id)
       .then(function(resp) {
         console.log(resp);
         if (resp.status == 404) {
@@ -28,7 +28,7 @@ export default class Edit extends React.Component {
           if (resp.status == 200) {
             console.log("download >>>>>>>> " + id);
             var tempLink = document.createElement("a");
-            tempLink.href = "http://localhost:5000/download/" + id;
+            tempLink.href = "http://localhost:8080/download/" + id;
             tempLink.click();
             return resp.json();
           } else {
@@ -57,7 +57,7 @@ export default class Edit extends React.Component {
   handleSave() {
     console.log(this.state.title);
     console.log(this.state.content);
-    fetch("http://localhost:5000/text/" + this.props.query.id, {
+    fetch("http://localhost:8080/text/" + this.props.query.id, {
       method: "PUT",
       headers: {
         Accept: "application/json",

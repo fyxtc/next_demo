@@ -21,7 +21,7 @@ export default class Index extends React.Component {
   handleSubmit() {
     console.log(this.state.title);
     console.log(this.state.content);
-    fetch("http://localhost:5000/texts", {
+    fetch("http://localhost:8080/texts", {
       method: "POST",
       headers: {
         Accept: "application/json",

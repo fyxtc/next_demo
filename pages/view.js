@@ -9,7 +9,7 @@ export default class View extends React.Component {
     };
   }
   componentDidMount() {
-    fetch("http://localhost:5000/texts")
+    fetch("http://localhost:8080/texts")
       .then(resp => resp.json())
       .then(json => {
         console.log(json);
@@ -24,7 +24,7 @@ export default class View extends React.Component {
       return this.state.data.map(data => (
         <li key={data.tid}>
           {data.title}
-
+          &nbsp;&nbsp;
           <Link href={"/edit?id=" + data.tid}>
             <button type="button" value={data.tid}>
               {" "}
